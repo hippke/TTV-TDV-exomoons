@@ -4,9 +4,9 @@
 
 *René Heller, Michael Hippke, Ben Placek, Daniel Angerhausen, and Eric Agol*
 
-## Tutorial
+## Example use
 
-### Define parameters
+Define parameters
 ```python
 planet.mass = M_jup
 semimajor_axis = a_jup
@@ -21,7 +21,7 @@ secondmoon.mass = M_gan
 secondmoon.px = a_eur
 ```
 
-### Calculate initial conditions
+Calculate initial conditions
 ```python
 # Calculate start velocities
 firstmoon.vy = math.sqrt(G * planet.mass * (2 / firstmoon.px - 1 / firstmoon.px))
@@ -37,7 +37,7 @@ planet.px = 0.5 * (gravity_firstmoon + gravity_secondmoon)
 orbit_duration = math.sqrt((4 * math.pi**2 *secondmoon.px ** 3) / (G * (secondmoon.mass + planet.mass))) 
 ```
 
-### Run the simulation
+Run the simulation
 ```python
 ttv_array, tdv_array = run_sim(
     R_star, 
@@ -45,7 +45,7 @@ ttv_array, tdv_array = run_sim(
     [planet, firstmoon, secondmoon])
 ```    
 
-### Show results
+Show results
 ````python
 print 'TTV amplitude =', numpy.amax(ttv_array), \
     '[min] = ', numpy.amax(ttv_array) * 60, '[sec]'
