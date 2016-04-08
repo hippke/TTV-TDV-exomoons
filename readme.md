@@ -53,3 +53,4 @@ print 'TDV amplitude =', numpy.amax(tdv_array), \
     '[min] = ', numpy.amax(tdv_array) * 60, '[sec]'
 plt.plot(ttv_array, tdv_array, color = 'k')
 ```
+![](http://www.jaekle.info/fig_ttv_tdv.png)
